@@ -1,0 +1,7 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Online media is deliberately disabled until publication/moderation functions exist.
+    match /{allPaths=**} { allow read, write: if false; }
+  }
+}
